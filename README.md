@@ -116,7 +116,7 @@ python Bang.py
 ---
 
 ## 📜 License
-This project is licensed under the **MIT License**.
+This project is licensed under the Bell Software License (BSL). See the LICENSE file for details.
 
 ---
 
