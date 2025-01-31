@@ -230,10 +230,9 @@ ghost_art = r"""
 def main():
     root = tk.Tk()
     root.title("PeeBangTa - Secure File Hider")
-    root.geometry("800x700")  # Increased window size
+    root.geometry("800x700")  
     root.configure(bg="white")
 
-    # Proton-style colors
     PRIMARY_COLOR = "#5162FF"
     SECONDARY_COLOR = "#6D7AFF"
     TEXT_COLOR = "#0C0D2A"
@@ -242,7 +241,6 @@ def main():
     style = ttk.Style()
     style.theme_use("clam")
     
-    # Configure styles
     style.configure("TButton",
                     font=("Helvetica", 11, "bold"),
                     borderwidth=0,
@@ -259,36 +257,30 @@ def main():
     style.configure("TFrame", background=BG_COLOR)
     style.configure("Monospace.TLabel", font=("Courier New", 8))
 
-    # Header Frame
     header_frame = ttk.Frame(root, style="TFrame")
     header_frame.pack(pady=10, fill=tk.X)
 
-    # Ghost Art
     ghost_label = ttk.Label(header_frame, 
                            text=ghost_art,
                            style="Monospace.TLabel",
                            justify=tk.CENTER)
     ghost_label.pack(pady=10)
 
-    # Title Label
     title_label = ttk.Label(header_frame,
                            text="PeeBangTa",
                            font=("Helvetica", 24, "bold"),
                            style="TLabel")
     title_label.pack()
 
-    # Subtitle Label
     subtitle_label = ttk.Label(header_frame,
                               text="Secure File Hiding Solution",
                               font=("Helvetica", 12),
                               style="TLabel")
     subtitle_label.pack(pady=5)
 
-    # Main Content Frame
     main_frame = ttk.Frame(root, style="TFrame")
     main_frame.pack(fill=tk.BOTH, expand=True, padx=40, pady=20)
 
-    # Buttons
     buttons = [
         ("Hide a file in another file", hide_file_menu),
         ("Extract a hidden file", extract_file_menu),
@@ -304,7 +296,6 @@ def main():
                         style="TButton")
         btn.pack(fill=tk.X, pady=8)
 
-    # Footer
     footer_frame = ttk.Frame(root, style="TFrame")
     footer_frame.pack(side=tk.BOTTOM, fill=tk.X, pady=10)
     
@@ -314,7 +305,6 @@ def main():
                             style="TLabel")
     credit_label.pack()
 
-    # Add hover effect
     def on_enter(e):
         e.widget["background"] = SECONDARY_COLOR
 
